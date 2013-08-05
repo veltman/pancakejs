@@ -41,7 +41,7 @@ You can also pass an optional image format.  If you don't pass one, it will defa
 	//Make it a JPG instead of a PNG
 	var flapjack = Pancake("map","jpg");
 	
-	//So does this.  We're not that picky
+	//This works too.  We're not that picky
 	var flapjack = Pancake("map","image/jpeg");
     
 Accepted values are: `png`, `image/png`, `webp`, `image/webp`, `jpg`, `jpeg`, `image/jpg`, `image/jpeg`
