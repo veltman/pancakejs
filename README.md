@@ -36,7 +36,7 @@ To create a flat image based on an SVG or Canvas element, just call the construc
 	//Passing the element's ID
 	var flapjack = Pancake("map");
 
-You can also pass an optional image format.  If you don't pass one, it will default to PNG.  Other options are WebP and JPG.
+You can also pass an optional image format.  If you don't pass one, it will default to PNG.
 
 	//Make it a JPG instead of a PNG
 	var flapjack = Pancake("map","jpg");
@@ -44,7 +44,7 @@ You can also pass an optional image format.  If you don't pass one, it will defa
 	//So does this.  We're not that picky
 	var flapjack = Pancake("map","image/jpeg");
     
-    //Any of these values will work: png, image/png, webp, image/webp, jpg, jpeg, image/jpg, image/jpeg
+Accepted values are: `png`, `image/png`, `webp`, `image/webp`, `jpg`, `jpeg`, `image/jpg`, `image/jpeg`
 
 ### Serving a pancake ###
 
