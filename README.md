@@ -93,7 +93,7 @@ To trigger a download of the image, use the `.download()` method.  It accepts an
 
 ## Reference ##
 
-## Methods ##
+### Constructor ###
 
 **Pancake([element],[format],[attributes])**
 
@@ -112,6 +112,8 @@ Returns a pancaked image and some other handy properties.
     var pJPGWithClass = Pancake("mySvg","jpg",{class: "syrupy"});
     var p50x50 = Pancake("mySvg","jpg",{height: 50, width: 50});    
 
+### Properties of a pancake ###
+
 **p.src**
 
 The [data URI](https://developer.mozilla.org/en-US/docs/data_URIs) for a pancaked image.  This can be used just like an image URL.  Put it in the `src` of an existing image, or make it the `href` of a link, or set it as a background image.
@@ -127,6 +129,8 @@ The format of the pancaked image.  Either `png`,`jpg`,`webp`.
 **p.width and p.height**
 
 The width and height of the pancaked image.  Probably not reliable.
+
+### Methods of a pancake ###
 
 **p.replace([elementToReplace])**
 
