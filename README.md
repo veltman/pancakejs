@@ -148,6 +148,12 @@ Triggers a download of the original pancaked image.  If *filename* is supplied, 
 * Look into provided a nice download URL for the image itself, not just a download link (so far doesn't seem possible)
 * Haven't tested this that much.  Should test it on more browsers and with unusual inputs.
 
+## Other Resources ##
+
+* [canvg](https://code.google.com/p/canvg/), for converting canvas elements to SVG
+* [SVG Crowbar](http://nytimes.github.io/svg-crowbar/), for saving out an in-browser SVG as a .svg file with associated styles
+* [Grumpicon](http://www.grumpicon.com/), for converting SVGs into fallback images, also available as a [command line utility](https://github.com/filamentgroup/grunticon).
+
 ## Questions/Comments/Suggestions ##
 Noah Veltman  
 Web: http://noahveltman.com  
