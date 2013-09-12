@@ -144,14 +144,12 @@ Triggers a download of the original pancaked image.  If *filename* is supplied, 
 
 If your `<svg>` doesn't have an explicit pixel width/height defined, you're going to have a bad day.  Pancake.js will detect its true dimensions, but canvg won't, and it will throw an error instead.  The simplest fix for this is, right before you're going to create your Pancake, get the `<svg>`'s current width/height and set the attributes explicitly, like so:
 
-	//This won't work
 	<svg id="chart" width="100%" height="100%">
 
+	//This won't work	
 	var p = Pancake("chart");
 
 	//This will work
-	<svg id="chart" width="100%" height="100%">
-
 	var el = document.getElementById("chart__svg");
 	var bbox = el.getBBox();
 	el.setAttribute("width",bbox.width);
