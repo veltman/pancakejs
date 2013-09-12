@@ -140,6 +140,44 @@ Replace the element on the page with the pancaked image.  *elementToReplace* can
 
 Triggers a download of the original pancaked image.  If *filename* is supplied, that will be the default filename of the download.  Otherwise, it will guess a reasonable filename using the ID of the original `<svg>` or `<canvas>` element.  If there is no ID, it will default to `image.png`, `image.jpg`, or `image.webp` (depending on the format).
 
+## No defined width/height SVG bug ##
+
+If your `<svg>` doesn't have an explicit pixel width/height defined, you're going to have a bad day.  Pancake.js will detect its true dimensions, but canvg won't, and it will throw an error instead.  The simplest fix for this is, right before you're going to create your Pancake, get the `<svg>`'s current width/height and set the attributes explicitly, like so:
+
+	//This won't work
+	<svg id="chart" width="100%" height="100%">
+
+	var p = Pancake("chart");
+
+	//This will work
+	<svg id="chart" width="100%" height="100%">
+
+	var el = document.getElementById("chart__svg");
+	var bbox = el.getBBox();
+	el.setAttribute("width",bbox.width);
+	el..setAttribute("height",bbox.height);
+
+	var p = Pancake(el);
+
+	//D3 version
+	<svg id="chart" width="100%" height="100%">
+
+	var svg = d3.select("#chart");
+	var bbox = svg.node().getBBox();
+	svg.attr("width",bbox.width).("height",bbox.height);
+
+	var p = Pancake(svg.node());
+
+	//jQuery version
+	<svg id="chart" width="100%" height="100%">
+
+	var svg = $("#chart");
+	var bbox = svg.get(0).getBBox();
+	svg.attr("width",bbox.width).("height",bbox.height);
+
+	var p = Pancake(svg.get(0));
+
+
 ## To Dos ##
 
 * Smarter width/height detection - although it's unclear if this even matters.
