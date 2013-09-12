@@ -149,6 +149,7 @@ If your `<svg>` doesn't have an explicit pixel width/height defined, you're goin
 	//This won't work	
 	var p = Pancake("chart");
 
+
 	//This will work
 	var el = document.getElementById("chart__svg");
 	var bbox = el.getBBox();
@@ -157,18 +158,16 @@ If your `<svg>` doesn't have an explicit pixel width/height defined, you're goin
 
 	var p = Pancake(el);
 
-	//D3 version
-	<svg id="chart" width="100%" height="100%">
 
+	//D3 version
 	var svg = d3.select("#chart");
 	var bbox = svg.node().getBBox();
 	svg.attr("width",bbox.width).("height",bbox.height);
 
 	var p = Pancake(svg.node());
 
-	//jQuery version
-	<svg id="chart" width="100%" height="100%">
 
+	//jQuery version	
 	var svg = $("#chart");
 	var bbox = svg.get(0).getBBox();
 	svg.attr("width",bbox.width).("height",bbox.height);
